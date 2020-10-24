@@ -45,7 +45,7 @@ namespace TextAnalysis.Models
         public static int GetSentencesCount(string text)
         {
             Regex regex = new Regex(@"\w+[.?!]");
-            return regex.Matches(text).Count;
+            return regex.Matches(text).Count + 1;
         }
 
         /// <summary>

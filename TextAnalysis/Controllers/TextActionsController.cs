@@ -8,7 +8,7 @@ using TextAnalysis.Models;
 
 namespace TextAnalysis.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/TextActions")]
     [ApiController]
     public class TextActionsController : ControllerBase
     {
@@ -21,6 +21,7 @@ namespace TextAnalysis.Controllers
         [HttpPost]
         public JsonResult GetAnalysisResult(string text, string optionName)
         {
+
             object result = AnalysisOption.GetAnalysisMethod(optionName).Invoke(null, new object[] { text });
 
             return result != null ? new JsonResult(result) : new JsonResult("Operation was not found");
