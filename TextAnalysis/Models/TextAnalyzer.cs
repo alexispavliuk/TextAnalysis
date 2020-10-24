@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace TextAnalysis.Models
 {
+    /// <summary>
+    /// static class that contains different methods for text analysis
+    /// </summary>
     public static class TextAnalyzer
     {
+        /// <summary>
+        /// get count of words in text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>number of words</returns>
         public static int GetWordsCount(string text)
         {
             return text.Split(" ").Length;
         }
+
+        /// <summary>
+        /// get list of unique chars in text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>List of chars</returns>
         public static List<char> GetListOfChars(string text)
         {
             List<char> result = new List<char>();
@@ -22,11 +36,23 @@ namespace TextAnalysis.Models
             }
             return result;
         }
+
+        /// <summary>
+        /// get count of sentences in text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>number of sentences</returns>
         public static int GetSentencesCount(string text)
         {
             Regex regex = new Regex(@"\w+[.?!]");
             return regex.Matches(text).Count;
         }
+
+        /// <summary>
+        /// get the most common char in text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>the most common char</returns>
         public static (char, int) GetMostCommonChar(string text)
         {
             int max = 0;
