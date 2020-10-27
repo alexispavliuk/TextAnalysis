@@ -54,6 +54,10 @@ textarea {
     
 }
 
+div.result {
+    margin-top: 10px;
+    font-size: 1.7em;
+}
 
 div.footer {
     display: flex;

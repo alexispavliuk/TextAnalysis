@@ -19,12 +19,11 @@ namespace TextAnalysis.Controllers
         /// <param name="optionName">name of operation</param>
         /// <returns>Json result object</returns>
         [HttpPost]
-        public JsonResult GetAnalysisResult(string text, string optionName)
+        public object GetAnalysisResult([FromBody]RequestData data)
         {
+            object result = AnalysisOption.GetAnalysisMethod(data.nameMethod).Invoke(null, new object[] { data.Text });
 
-            object result = AnalysisOption.GetAnalysisMethod(optionName).Invoke(null, new object[] { text });
-
-            return result != null ? new JsonResult(result) : new JsonResult("Operation was not found");
+            return result ?? "Operation was not found";
         }
     }
 }

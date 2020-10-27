@@ -31,7 +31,7 @@ namespace TextAnalysis.Models
             List<char> result = new List<char>();
             foreach (char symbol in text)
             {
-                if (!result.Contains(symbol))
+                if (!result.Contains(symbol) && new Regex(@"\S").IsMatch(symbol.ToString()))
                     result.Add(symbol);
             }
             return result;
@@ -44,7 +44,7 @@ namespace TextAnalysis.Models
         /// <returns>number of sentences</returns>
         public static int GetSentencesCount(string text)
         {
-            Regex regex = new Regex(@"\w+[.?!]");
+            Regex regex = new Regex(@"\w+[.?!]\w+");
             return regex.Matches(text).Count + 1;
         }
 
@@ -53,7 +53,7 @@ namespace TextAnalysis.Models
         /// </summary>
         /// <param name="text">text to analyze</param>
         /// <returns>the most common char</returns>
-        public static (char, int) GetMostCommonChar(string text)
+        public static string GetMostCommonChar(string text)
         {
             int max = 0;
             char result = '\0';
@@ -65,9 +65,9 @@ namespace TextAnalysis.Models
                 {
                     max = symbolCount;
                     result = symbol;
-                } 
+                }
             }
-            return (result, max);
+            return $"{result} : {max}";
         }
     }
 }

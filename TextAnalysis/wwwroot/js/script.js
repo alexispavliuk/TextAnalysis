@@ -5,6 +5,8 @@
     { nameUI: "The most common char", nameMethod: "GetMostCommonChar" }
 ]
 
+const uri = 'api/textactions';
+
 function createOption(option) {
     return `
     <option value=${option.nameMethod}>${option.nameUI}</option>
@@ -19,20 +21,31 @@ document.querySelector("select").innerHTML = htmlOptions;
 
 document.getElementById("submit").addEventListener("click", getResult);
 
+
 function getResult() {
     const text = document.getElementById("text").value;
     const choosedOption = document.getElementById("choosedOption");
     const nameMethod = choosedOption.value;
+    const htmlResult = document.getElementById("result");
+    htmlResult.innerHTML = "";
 
-    try {
-        const uri = 'api/textactions';
-        //const response = fetch(uri, {
-        //    method: 'post',
-        //    body: [ text, nameMethod ]
-        //});
-        
+    if (text === "") {
+        htmlResult.innerHTML = "Please, enter some text";
+        return;
     }
-    catch (error) {
 
-    }
+    fetch(uri, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: text,
+            nameMethod: nameMethod
+        })
+    })
+    .then(res => res.text())
+    .then(data => {
+        htmlResult.innerHTML = data;
+    });
 }

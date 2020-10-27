@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YhRQj0PlW6B7fbXnjMYOTinzicX7fORgV0qQGYFPCVSWnYIBdTpN5VBt8x6IEWr2pP8+cZ0aYJuH5WWTJ9K/2A==",
+  "dgSpecHash": "K1RYSG6ZlrA3gr39BX2uRVFjcV6M5+f1DGhSUxmcvgW7EyRUNZJQsTbnabPRAGp/6wh7tPtJzp861PH3v0c2KQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\d4rk\\Desktop\\dotnet\\TextAnalysis\\TextAnalysis\\TextAnalysis.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\d4rk\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
