@@ -17,6 +17,8 @@ C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\T
 C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.pdb
 C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.genruntimeconfig.cache
 C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.csproj.CopyComplete
+C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\bin\Debug\netcoreapp3.1\AWSSDK.Comprehend.dll
+C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\bin\Debug\netcoreapp3.1\AWSSDK.Core.dll
 C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.csproj.CoreCompileInputs.cache
 C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\d4rk\Desktop\dotnet\TextAnalysis\TextAnalysis\obj\Debug\netcoreapp3.1\TextAnalysis.csproj.CopyComplete

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Amazon;
+using Amazon.Comprehend;
+using Amazon.Comprehend.Model;
+using Amazon.Runtime;
 
 namespace TextAnalysis.Models
 {
@@ -68,6 +72,61 @@ namespace TextAnalysis.Models
                 }
             }
             return $"{result} : {max}";
+        }
+
+        /// <summary>
+        /// detect language of the text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>code of language</returns>
+        public static string DetectLanguage(string text)
+        {
+            BasicAWSCredentials credentials =
+                new BasicAWSCredentials("AKIAI4LCT7IIROLBGKWQ", "XS6xmKZpQVnRXkyAoG7K63PPe4ocoE+PQt2HGPQ/");
+            AmazonComprehendClient amazonComprehendClient =
+                new AmazonComprehendClient(credentials, RegionEndpoint.EUCentral1);
+
+            DetectDominantLanguageRequest detectLanguageRequest = new DetectDominantLanguageRequest();
+            detectLanguageRequest.Text = text;
+
+            Task<DetectDominantLanguageResponse> lang =
+                amazonComprehendClient.DetectDominantLanguageAsync(detectLanguageRequest);
+
+            return lang.Result.Languages[0].LanguageCode;
+        }
+
+        /// <summary>
+        /// get emotionality of the text
+        /// </summary>
+        /// <param name="text">text to analyze</param>
+        /// <returns>string with results</returns>
+        public static string GetEmotionality(string text)
+        {
+            string language = DetectLanguage(text);
+            
+
+            BasicAWSCredentials credentials =
+                new BasicAWSCredentials("AKIAI4LCT7IIROLBGKWQ", "XS6xmKZpQVnRXkyAoG7K63PPe4ocoE+PQt2HGPQ/");
+            AmazonComprehendClient amazonComprehendClient =
+                new AmazonComprehendClient(credentials, RegionEndpoint.EUCentral1);
+
+            DetectSentimentRequest detectSentimenteRequest = new DetectSentimentRequest();
+            detectSentimenteRequest.Text = text;
+
+            try
+            {
+                detectSentimenteRequest.LanguageCode = language;
+                Task<DetectSentimentResponse> result =
+                amazonComprehendClient.DetectSentimentAsync(detectSentimenteRequest);
+                return $"Mixed:{String.Format("{0:f2}", result.Result.SentimentScore.Mixed)}\n" +
+                       $"Positive:{String.Format("{0:f2}", result.Result.SentimentScore.Positive)}\n" +
+                       $"Neutral:{String.Format("{0:f2}", result.Result.SentimentScore.Neutral)}\n" +
+                       $"Negative:{String.Format("{0:f2}", result.Result.SentimentScore.Negative)}";
+            }
+            catch (Exception)
+            {
+                return "Language of your text is not supported yet";
+            }
         }
     }
 }

@@ -2,7 +2,9 @@
     { nameUI: "Number of words", nameMethod : "GetWordsCount" },
     { nameUI: "List of chars in text", nameMethod: "GetListOfChars" },
     { nameUI: "Number of sentences", nameMethod: "GetSentencesCount" },
-    { nameUI: "The most common char", nameMethod: "GetMostCommonChar" }
+    { nameUI: "The most common char", nameMethod: "GetMostCommonChar" },
+    { nameUI: "Detect language", nameMethod: "DetectLanguage" },
+    { nameUI: "Emotionality of the text", nameMethod: "GetEmotionality" },
 ]
 
 const uri = 'api/textactions';

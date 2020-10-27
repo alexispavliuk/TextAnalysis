@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "K1RYSG6ZlrA3gr39BX2uRVFjcV6M5+f1DGhSUxmcvgW7EyRUNZJQsTbnabPRAGp/6wh7tPtJzp861PH3v0c2KQ==",
+  "dgSpecHash": "Xy9vfBQPHp7RJ3pvg2GfjD3Rfjtjtzwpbn9drXlkBsa7O2ynaYB8vhbRtwvZhCHcaWUbaSzTay9AyFRdwx7y2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\d4rk\\Desktop\\dotnet\\TextAnalysis\\TextAnalysis\\TextAnalysis.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\d4rk\\.nuget\\packages\\awssdk.comprehend\\3.5.2.14\\awssdk.comprehend.3.5.2.14.nupkg.sha512",
+    "C:\\Users\\d4rk\\.nuget\\packages\\awssdk.core\\3.5.1.30\\awssdk.core.3.5.1.30.nupkg.sha512",
     "C:\\Users\\d4rk\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": []
