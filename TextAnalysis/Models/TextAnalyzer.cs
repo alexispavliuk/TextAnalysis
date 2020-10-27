@@ -106,7 +106,7 @@ namespace TextAnalysis.Models
             
 
             BasicAWSCredentials credentials =
-                new BasicAWSCredentials("AKIAI4LCT7IIROLBGKWQ", "XS6xmKZpQVnRXkyAoG7K63PPe4ocoE+PQt2HGPQ/");
+                new BasicAWSCredentials("there should be secret id", "there should be secret key");
             AmazonComprehendClient amazonComprehendClient =
                 new AmazonComprehendClient(credentials, RegionEndpoint.EUCentral1);
 
